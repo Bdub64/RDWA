@@ -18,11 +18,10 @@ const gdmOptions = {
   async function startCapture(displayMediaOptions) {
   
     try {
-      videoElem.srcObject =
-        await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+      videoElem.srcObject = navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
     } catch (err) {
       console.error(err);
     }
   }
   startCapture(gdmOptions)
-  //test
+  
