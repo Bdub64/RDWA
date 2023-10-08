@@ -18,10 +18,10 @@ const gdmOptions = {
   async function startCapture(displayMediaOptions) {
   
     try {
-      videoElem.srcObject = navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+      console.log('Attempting C# script run...')
+      videoElem.srcObject = DotNet.invokeMethod('videoClass','getVideo') // should change navigator... to a pull for the c# video feed when next available. pushing to Main for now.
     } catch (err) {
       console.error(err);
     }
   }
   startCapture(gdmOptions)
-  
